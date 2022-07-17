@@ -1,0 +1,69 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.3"
+    defaultConfig {
+        applicationId "com.efpstudios.woodphotoframe"
+        minSdkVersion 14
+        targetSdkVersion 18
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        externalNativeBuild {
+            cmake {
+                cppFlags ""
+            }
+        }
+    }
+    signingConfigs {
+        release {
+            storeFile file("E:\\APK Jadi\\Android Studio\\EFP Studios (Project Frame)\\sistem\\keystore.jks")
+            storePassword "DFTR4512\$#yt"
+            keyAlias "EFP Studios"
+            keyPassword "DFTR4512\$#yt"
+            v2SigningEnabled true
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+    externalNativeBuild {
+        cmake {
+            path "CMakeLists.txt"
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+
+    //support library
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support:recyclerview-v7:25.3.1'
+
+    //admob
+    compile 'com.google.android.gms:play-services-ads:10.0.0'
+
+    //image filter
+    compile 'com.github.mukeshsolanki:photofilter:1.0.2'
+
+    //color picker
+    compile 'com.jaredrummler:colorpicker:1.0.0'
+
+    //image cropper
+    compile 'com.theartofdev.edmodo:android-image-cropper:2.4.7'
+
+    //startapp
+    compile 'com.startapp:inapp-sdk:3.6.5'
+
+}

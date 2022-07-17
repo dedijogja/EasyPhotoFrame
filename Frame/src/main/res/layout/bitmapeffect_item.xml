@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="wrap_content"
+    android:layout_height="match_parent">
+    <com.efpstudios.view.SquareRelativeLayoutBasedWidth
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_margin="4dp"
+            android:id="@+id/imgBitmapEffectItem"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+           />
+        <LinearLayout
+            android:id="@+id/penampungBitmapEffectItem"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:orientation="horizontal" />
+    </com.efpstudios.view.SquareRelativeLayoutBasedWidth>
+</RelativeLayout>
